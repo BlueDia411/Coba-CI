@@ -39,7 +39,7 @@
                             <td><?= $mhs['jurusan'];?></td>
                             <td>
                             <a href="" class="badge badge-success">Ubah</a>
-                            <a href="" class="badge badge-danger">Hapus</a>
+                            <a href="<?= base_url();?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin akan menghapusnya ?');">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
