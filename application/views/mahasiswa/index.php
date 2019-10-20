@@ -22,7 +22,6 @@
                             <th scope="col">#</th>
                             <th scope="col">Nama</th>
                             <th scope="col">NRP</th>
-                            <th scope="col">E-mail</th>
                             <th scope="col">Jurusan</th>
                             <th scope="col">Aksi</th>
                         </tr>
@@ -35,7 +34,6 @@
                             <th scope="row"><?= $i++;?></th>
                             <td><?= $mhs['nama'];?></td>
                             <td><?= $mhs['nrp'];?></td>
-                            <td><?= $mhs['email'];?></td>
                             <td><?= $mhs['jurusan'];?></td>
                             <td>
                             <a href="<?= base_url();?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-info">Detail</a>

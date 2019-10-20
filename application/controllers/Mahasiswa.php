@@ -61,7 +61,7 @@ class Mahasiswa extends CI_Controller {
 
         if($this->form_validation->run() === false){
             $this->load->view('templates/header', $data);
-            $this->load->view('mahasiswa/ubah');
+            $this->load->view('mahasiswa/ubah', $data);
             $this->load->view('templates/footer');
         } else {
             $this->Mahasiswa_model->ubahDataMahasiswa();
