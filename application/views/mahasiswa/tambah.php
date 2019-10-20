@@ -20,16 +20,12 @@
                 Form Tambah Data Mahasiswa
                 </div>
                 <div class="card-body">
-                <?php if(validation_errors()) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?= validation_errors();?>
-                    </div>
-                <?php endif; ?>
                     <form method="post" action="<?= base_url('mahasiswa/tambah');?>">
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama">
                         <?= form_error('nama')?>
+                        <small class="form-text text-danger"><?= form_error('nama'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="nrp">NRP</label>
