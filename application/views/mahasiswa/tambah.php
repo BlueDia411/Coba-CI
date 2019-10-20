@@ -20,7 +20,7 @@
                 Form Tambah Data Mahasiswa
                 </div>
                 <div class="card-body">
-                    <form method="post" action="<?= base_url('mahasiswa/tambah');?>">
+                    <form method="post" action="">
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama">
