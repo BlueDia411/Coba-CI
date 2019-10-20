@@ -1,6 +1,13 @@
 <?php
 
 class Mahasiswa extends CI_Controller {
+
+    public function __construct(){
+        parent::__construct();
+        $this->load->model('Mahasiswa_model');
+        $this->load->library('form_validation');
+    }
+
     public function index(){
         $this->load->model('Mahasiswa_model');
         $data['mahasiswa'] = $this->Mahasiswa_model->getAllMahasiswa();
@@ -11,21 +18,16 @@ class Mahasiswa extends CI_Controller {
     }
 
     public function tambah(){
-        $this->load->library('form_validation');
         $this->load->model('Mahasiswa_model');
         $this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]');
+        $this->form_validation->set_rules('nrp', 'NRP', 'required|numeric');
+        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email');
 
         if($this->form_validation->run() === false){
             $this->load->view('mahasiswa/tambah');
         } else {
-            $data = [
-                'nama' => $this->input->post('nama'),
-                'nrp' => $this->input->post('nrp'),
-                'email' => $this->input->post('email'),
-                'jurusan' => $this->input->post('jurusan')
-            ];
-
-            $this->db->insert('mahasiswa', $data);
+            $this->Mahasiswa_model->tambahDataMahasiswa();
+            $this->session->set_flashdata('flash', 'Ditambahkan');
             redirect('mahasiswa/index');
         }
     }
