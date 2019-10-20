@@ -43,7 +43,7 @@
                             <th scope="col">Nama</th>
                             <th scope="col">NRP</th>
                             <th scope="col">Jurusan</th>
-                            <th scope="col">Aksi</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 
@@ -56,11 +56,13 @@
                             <td><?= $mhs['nrp'];?></td>
                             <td><?= $mhs['jurusan'];?></td>
                             <td>
+                            <div class="float-right">
                             <a href="<?= base_url();?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-info">Detail</a>
 
                             <a href="<?= base_url();?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success">Ubah</a>
 
                             <a href="<?= base_url();?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin akan menghapusnya ?');">Hapus</a>
+                            </div>
                             </td>
                         </tr>
                     <?php endforeach; ?>
