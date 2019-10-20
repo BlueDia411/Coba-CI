@@ -14,8 +14,10 @@
             $this->db->insert('mahasiswa', $data);
         }
         public function hapusDataMahasiswa($id){
-            $this->db->where('id', $id);
-            $this->db->delete('mahasiswa');
+            $this->db->delete('mahasiswa', ['id' => $id]);
+        }
+        public function getMahasiswaById($id){
+           return $this->db->get_where('mahasiswa', ['id' => $id])->row_array();
         }
     }
 ?>
