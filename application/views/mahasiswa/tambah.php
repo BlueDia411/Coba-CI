@@ -14,27 +14,41 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h3>Form Tambah Data Mahasiswa</h3>
-                <form method="post" action="<?= base_url('mahasiswa/tambah');?>">
-                <div class="form-group">
-                    <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama">
-                    <?= form_error('nama')?>
+
+            <div class="card">
+                <div class="card-header">
+                Form Tambah Data Mahasiswa
                 </div>
-                <div class="form-group">
-                    <label for="nrp">NRP</label>
-                    <input type="text" class="form-control" id="nrp" name="nrp">
+                <div class="card-body">
+                    <form method="post" action="<?= base_url('mahasiswa/tambah');?>">
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama">
+                        <?= form_error('nama')?>
+                    </div>
+                    <div class="form-group">
+                        <label for="nrp">NRP</label>
+                        <input type="text" class="form-control" id="nrp" name="nrp">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="jurusan">Jurusan</label>
+                        <select class="form-control" id="jurusan" name="jurusan">
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Teknik Industri">Teknik Industri</option>
+                        <option value="Teknik Pangan">Teknik Pangan</option>
+                        <option value="Teknik Mesin">Teknik Mesin</option>
+                        <option value="Teknik Planologi">Teknik Planologi</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right" name="tambah">Tambah</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input type="text" class="form-control" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="jurusan">Jurusan</label>
-                    <input type="text" class="form-control" id="jurusan" name="jurusan">
-                </div>
-                <button type="submit" class="btn btn-primary">Tambah</button>
-                </form>
+            </div>
+
             </div>
         </div>
     </div>
