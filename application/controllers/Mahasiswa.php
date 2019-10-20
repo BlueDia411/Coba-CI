@@ -49,8 +49,11 @@ class Mahasiswa extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function ubah(){
+    public function ubah($id){
         $data['judul'] = 'Ubah Data Mahasiswa';
+        $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($id);
+        $data['jurusan'] = ['Teknik Informatika', 'Teknik Mesin', 'Teknik Planologi', 'Teknik Pangan', 'Teknik Lingkungan', 'Teknik Industri'];
+
         $this->load->model('Mahasiswa_model');
         $this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]');
         $this->form_validation->set_rules('nrp', 'NRP', 'required|numeric');

@@ -20,33 +20,36 @@
                 Form Ubah Data Mahasiswa
                 </div>
                 <div class="card-body">
+                    <input type="hidden" name="id" value="<?= $mahasiswa['id'];?>">
                     <form method="post" action="<?= base_url('mahasiswa/tambah');?>">
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama">
+                        <input type="text" class="form-control" id="nama" name="nama" value="<?= $mahasiswa['nama']; ?>">
                         <small class="form-text text-danger"><?= form_error('nama'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="nrp">NRP</label>
-                        <input type="text" class="form-control" id="nrp" name="nrp">
+                        <input type="text" class="form-control" id="nrp" name="nrp" value="<?= $mahasiswa['nrp']; ?>">
                         <small class="form-text text-danger"><?= form_error('nrp'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="email">E-Mail</label>
-                        <input type="text" class="form-control" id="email" name="email">
+                        <input type="text" class="form-control" id="email" name="email" value="<?= $mahasiswa['email']; ?>">
                         <small class="form-text text-danger"><?= form_error('email'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="jurusan">Jurusan</label>
                         <select class="form-control" id="jurusan" name="jurusan">
-                        <option value="Teknik Informatika">Teknik Informatika</option>
-                        <option value="Teknik Industri">Teknik Industri</option>
-                        <option value="Teknik Pangan">Teknik Pangan</option>
-                        <option value="Teknik Mesin">Teknik Mesin</option>
-                        <option value="Teknik Planologi">Teknik Planologi</option>
+                        <?php foreach($jurusan as $j) : ?>
+                            <?php if( $j == $mahasiswa['jurusan'] ) : ?>
+                                <option value="<?= $j?>" selected><?= $j?></option>
+                            <?php else : ?>
+                                <option value="<?= $j?>"><?= $j?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary float-right" name="tambah">Ubah</button>
+                    <button type="submit" class="btn btn-primary float-right" name="ubah">Ubah</button>
                     </form>
                 </div>
             </div>
