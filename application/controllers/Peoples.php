@@ -6,7 +6,7 @@ class Peoples extends CI_Controller {
         $this->load->model('Mahasiswa_model');
         $data["judul"] = 'List Of Peoples';
         $this->load->model('Peoples_model', 'peoples');
-        $data['peoples'] = $this->peoples->getAllPeoples();
+        $data['peoples'] = $this->peoples->getPeoples(12, 20);
 
         $this->load->view('templates/header', $data);
         $this->load->view('peoples/index', $data);

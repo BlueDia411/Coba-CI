@@ -5,12 +5,14 @@
 
         <table class="table">
             <thead>
+            
                 <tr>
                     <th>#</th>
                     <th>Name</th>
                     <th>E-mail</th>
                     <th>Action</th>
-                </tr>    
+                </tr>
+
             </thead>
                 <tbody>
                 <?php $i = 1; foreach($peoples as $people) : ?>
