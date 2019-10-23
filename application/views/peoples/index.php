@@ -5,7 +5,7 @@
 
         <table class="table">
             <thead>
-            
+
                 <tr>
                     <th>#</th>
                     <th>Name</th>
@@ -15,9 +15,9 @@
 
             </thead>
                 <tbody>
-                <?php $i = 1; foreach($peoples as $people) : ?>
+                <?php foreach($peoples as $people) : ?>
                     <tr>
-                        <th><?= $i++; ?></th>
+                        <th><?= ++$start; ?></th>
                         <td><?= $people['name']; ?></td>
                         <td><?= $people['email']; ?></td>
                         <td>
@@ -29,7 +29,7 @@
                 <?php endforeach; ?>
                 </tbody>
         </table>
-        
+        <?= $this->pagination->create_links(); ?>
         </div>
     </div>
 </div>
