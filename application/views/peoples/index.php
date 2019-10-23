@@ -2,10 +2,10 @@
     <h3 class="mt-3">List Of Peoples</h3>
 
     <div class="row">
-        <div class="col-md">
+        <div class="col-md-5">
             <form action="<?= base_url('peoples'); ?>" method="post">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="search keyword.." name="keyword">
+                    <input type="text" class="form-control" placeholder="search keyword.." name="keyword" autocomplete="off" autofocus>
                     <div class="input-group-append">
                         <input class="btn btn-primary" type="submit" name="submit">
                     </div>
@@ -16,7 +16,7 @@
 
     <div class="row">
         <div class="col-md-10">
-
+        <h5>Results : <?= $total_rows; ?></h5>
         <table class="table">
             <thead>
 
