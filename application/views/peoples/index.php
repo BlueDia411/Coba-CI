@@ -3,7 +3,7 @@
         <div class="col-md-10">
         <h3 class="mt-3">List Of Peoples</h3>
 
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>#</th>
@@ -13,16 +13,18 @@
                 </tr>    
             </thead>
                 <tbody>
+                <?php $i = 1; foreach($peoples as $people) : ?>
                     <tr>
-                        <th>1</th>
-                        <td>Yogi Nugraha</td>
-                        <td>yoginugraha43@gmail.com</td>
+                        <th><? $i++; ?></th>
+                        <td><?= $people['name']; ?></td>
+                        <td><?= $people['email']; ?></td>
                         <td>
-                        <a href="" class="badge badge-Warning">Detail</a>
+                        <a href="" class="badge badge-warning">Detail</a>
                         <a href="" class="badge badge-success">Edit</a>
                         <a href="" class="badge badge-danger">Delete</a>
                         </td>
                     </tr>
+                <?php endforeach; ?>
                 </tbody>
         </table>
         
