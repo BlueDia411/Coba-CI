@@ -15,7 +15,7 @@
                 <tbody>
                 <?php $i = 1; foreach($peoples as $people) : ?>
                     <tr>
-                        <th><? $i++; ?></th>
+                        <th><?= $i++; ?></th>
                         <td><?= $people['name']; ?></td>
                         <td><?= $people['email']; ?></td>
                         <td>
