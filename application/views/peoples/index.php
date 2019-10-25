@@ -16,43 +16,43 @@
 
     <div class="row">
         <div class="col-md-10">
-        <h5>Results : <?= $total_rows; ?></h5>
-        <table class="table">
-            <thead>
+            <h5>Results : <?= $total_rows; ?></h5>
+            <table class="table">
+                <thead>
 
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>E-mail</th>
-                    <th>Action</th>
-                </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>E-mail</th>
+                        <th>Action</th>
+                    </tr>
 
-            </thead>
+                </thead>
                 <tbody>
-                <?php if(empty($peoples)) : ?>
-                    <tr>
-                        <td colspan="4">
-                            <div class="alert alert-danger" role="alert">
-                            Data Not Found!!
-                            </div>
-                        </td>
-                    </tr>
-                <?php endif; ?>
-                <?php foreach($peoples as $people) : ?>
-                    <tr>
-                        <th><?= ++$start; ?></th>
-                        <td><?= $people['name']; ?></td>
-                        <td><?= $people['email']; ?></td>
-                        <td>
-                        <a href="" class="badge badge-warning">Detail</a>
-                        <a href="" class="badge badge-success">Edit</a>
-                        <a href="" class="badge badge-danger">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
+                    <?php if (empty($peoples)) : ?>
+                        <tr>
+                            <td colspan="4">
+                                <div class="alert alert-danger" role="alert">
+                                    Data Not Found!!
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                    <?php foreach ($peoples as $people) : ?>
+                        <tr>
+                            <th><?= ++$start; ?></th>
+                            <td><?= $people['name']; ?></td>
+                            <td><?= $people['email']; ?></td>
+                            <td>
+                                <a href="<?= base_url(); ?>peoples/detail/<?= $people['id']; ?>" class="badge badge-info">Detail</a>
+                                <a href="<?= base_url(); ?>peoples/ubah/<?= $people['id']; ?>" class="badge badge-success">Ubah</a>
+                                <a href="<?= base_url(); ?>peoples/hapus/<?= $people['id']; ?>" class="badge badge-danger">Hapus</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
-        </table>
-        <?= $this->pagination->create_links(); ?>
+            </table>
+            <?= $this->pagination->create_links(); ?>
         </div>
     </div>
 </div>
